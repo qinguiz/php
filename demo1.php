@@ -9,7 +9,7 @@
 
 		//构造函数，在对象被实例化时自动调用；
 		function __construct($name,$height,$weight,$team,$playerNumber){
-			echo "IN NbaPlayer construct\n";
+			echo "IN NbaPlayer construct <br>";
 			$this->name = $name;
 			$this->height = $height;
 			$this->weight = $weight;
@@ -19,15 +19,15 @@
 
 		//定义方法
 		public function run(){
-			echo "Running \n";
+			echo "Running <br>";
 		}
 
 		public function jump(){
-			echo "Jumping \n";
+			echo "Jumping <br>";
 		}
 
 		public function dribble(){
-			echo "Dribbling \n";
+			echo "Dribbling <br>";
 		}
 	}
 
@@ -38,8 +38,8 @@
 	//类后面的参数列表会作为参数自动调用类里面的构造函数；
 	$jeams = new NbaPlayer("Jeams","203cm","102kg","Heats","6");
 	//对象中的属性可以通过 “->” 符号来访问；
-	echo $jordan->name."\n";
-	echo $jeams->name."\n";
+	echo $jordan->name."<br>";
+	echo $jeams->name."<br>";
 
 	//对象中的方法可以通过 “->” 符号来访问；
 
