@@ -9,15 +9,15 @@
 
 		//定义方法
 		public function run(){
-			echo "Running\n";
+			echo "Running \n";
 		}
 
 		public function jump(){
-			echo "Jumping\n";
+			echo "Jumping \n";
 		}
 
 		public function dribble(){
-			echo "Dribbling\n";
+			echo "Dribbling \n";
 		}
 	}
 
@@ -25,5 +25,10 @@
 	//类到对象的实例用 new 关键字来实现，并且在名称后面紧跟一对括号；
 	$jordan = new NbaPlayer();
 	//对象中的属性可以通过 “->” 符号来访问；
-	echo $jordan->name;
+	echo $jordan->name."\n";
+	//对象中的方法可以通过 “->” 符号来访问；
+
+	$jordan -> dribble();
+	$jordan -> jump();
+
  ?>
