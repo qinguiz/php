@@ -17,6 +17,14 @@
 		public static function __callStatic($name,$arguments){
 			echo "Calling ".$name." with parameters: ".implode(",",$arguments)."\n";
 		}
+		//当对象获取不存在的属性时会自动调用get方法
+		public function __get($name){
+			echo "This the property is ".$name."\n";
+		}
+		//当对象设置不存在的属性时会自动调用set方法
+		public function __set($name,$value){
+			echo "The property is ".$name." to value ".$value."\n";
+		}
 	}
 
 	$var = new MagicTest();
@@ -24,4 +32,6 @@
 	$var(6);
 	$var->run("para1","para2");
 	MagicTest::run("para1","para2");
+	echo $var->a;
+	$var->a = "className";
  ?>
