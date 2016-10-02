@@ -18,6 +18,7 @@
 		}
 
 		//析构函数，在程序执行完之后自动调用；
+		//析构函数通常被用于清理程序使用的资源，例如，程序使用了打印机，那么可以在析构函数里面释放打印机资源；
 		function __destruct(){
 			echo "Destroying ".$this->name."\n";
 		}
@@ -41,19 +42,25 @@
 	$jordan = new NbaPlayer("Jordan","198cm","98kg","Bull","23");
 
 	//类后面的参数列表会作为参数自动调用类里面的构造函数；
-	$jeams = new NbaPlayer("Jeams","203cm","102kg","Heats","6");
-
-	//对象设置为null，就直接调用析构函数
-	// $jeams = null;
+	$james = new NbaPlayer("James","203cm","102kg","Heats","6");
 
 	//对象中的属性可以通过 “->” 符号来访问；
 	echo $jordan->name."\n";
 
-	echo $jeams->name."\n";
+	echo $james->name."\n";
+
+
+	//当对象不会再被使用的时候，会触发析构函数；
+	$james1 = $james;	//james1 指向 对象 NbaPlayer
+	$james2 = &$james;  //james2 指向引用 james  james2 == james
+
+	//对象设置为null，就直接调用析构函数
+	$james = null;
+
+	echo "From now on James will not be used.\n";
 
 	//对象中的方法可以通过 “->” 符号来访问；
-
-	$jordan -> dribble();
-	$jordan -> jump();
+	// $jordan -> dribble();
+	// $jordan -> jump();
 
  ?>
