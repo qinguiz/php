@@ -8,10 +8,21 @@
 	class human implements IcanEat{
 		//实现某个接口后，需要提供接口的实现方法
 		public function eat($food){
-			echo "human eatting ".$food;
+			echo "human eatting ".$food."\n";
+		}
+	}
+
+	class animal implements IcanEat{
+		//实现某个接口后，需要提供接口的实现方法
+		public function eat($food){
+			echo "animal eatting ".$food."\n";
 		}
 	}
 
 	$human = new human();
+	$animal = new animal();
 	$human->eat("Apple");
+	$animal->eat("Banana");
+	//可以用instanceof来判断某个对象是否实现了某个接口
+	var_dump($human instanceof IcanEat);
  ?>
