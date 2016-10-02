@@ -2,11 +2,20 @@
 	
 	class Human{
 		public $name;
-		public $height;
+		protected $height; //可以被自身和子类引用
 		public $weight;
+		private $age = "40"; //私有变量,只能被自身引用
 
 		public function eat($food){
 			echo $this->name."'s eatting ".$food."\n";
+		}
+
+		public function getAge(){
+			echo $this->age." is Jordan age! \n";  //获取私有变量
+		}
+
+		public function info(){
+			echo "The human is".$this->name.";"."height is ".$this->height.";";
 		}
 	}
 	//extends继承Human的类,只能继承一个类
@@ -51,4 +60,6 @@
 
 	echo $jordan->name."\n";
 	echo $jordan->eat("Apple");
+	$jordan->getAge();
+	$jordan->info();
  ?>
