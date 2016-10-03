@@ -38,7 +38,7 @@ create table `imooc_user`(
 `id` int unsigned auto_increment primary key,
 `username` varchar(20) not null unique,
 `password` char(20) not null,
-`sex` enum("男","女","保密") not null default "保密",
+`sex` enum("male","famale","secret") not null default "secret",
 `face` varchar(50) not null,
 `regTime` int unsigned not null
 );
