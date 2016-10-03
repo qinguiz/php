@@ -42,4 +42,12 @@ create table `imooc_user`(
 `sex` enum("男","女","保密") not null default "保密",
 `face` varchar(50) not null,
 `regTime` int unsigned not null
-)
+);
+
+--相册表
+drop table if not exists `imooc_album`;
+create table `imooc_album`(
+`id` int unsigned auto_increment key,
+`pid` int unsigned not null,
+`albumPath` varchar(50) not null
+);
