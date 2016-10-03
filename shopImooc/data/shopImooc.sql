@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS `shopImooc`;
 USE `shopImooc`;
---管理表
-DROP TABLE IF NOT EXISTS `imooc_admin`;
+
+DROP TABLE IF EXISTS `imooc_admin`;
 CREATE TABLE `imooc_admin`(
 `id` TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 `username` varchar(20) not null unique,
@@ -9,15 +9,14 @@ CREATE TABLE `imooc_admin`(
 `email` varchar(50) not null
 );
 
---分类表
-drop table if not exists `imooc_cate`;
+drop table if exists `imooc_cate`;
 create table `imooc_cate`(
 `id` smallint unsigned auto_increment primary key,
 `cName` varchar(50) unique
 );
 
---商品表
-drop table if not exists `imooc_pro`;
+
+drop table if exists `imooc_pro`;
 create table `imooc_pro`(
 `id` int unsigned auto_increment primary key,
 `pName` varchar(50) not null unique,
@@ -29,12 +28,12 @@ create table `imooc_pro`(
 `pImg` varchar(50) not null,
 `pubTime` int unsigned not null,
 `isShow` tinyint(1) default 1,
-`isHot` tinyint(1) defaule 0,
+`isHot` tinyint(1) default 0,
 `cid` smallint unsigned not null
 );
 
---用户表
-drop table if not exists `imooc_user`;
+
+drop table if exists `imooc_user`;
 create table `imooc_user`(
 `id` int unsigned auto_increment primary key,
 `username` varchar(20) not null unique,
@@ -44,8 +43,8 @@ create table `imooc_user`(
 `regTime` int unsigned not null
 );
 
---相册表
-drop table if not exists `imooc_album`;
+
+drop table if exists `imooc_album`;
 create table `imooc_album`(
 `id` int unsigned auto_increment key,
 `pid` int unsigned not null,
