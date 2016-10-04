@@ -1,6 +1,7 @@
 <?php 
 require_once "string.func.php";
 function verifyImage($type=1,$length=4,$sess_name="verify",$pixel = 50,$line = 10){
+	session_start();
 //通过GD库做验证码
 //创建画布
 $width=80;
@@ -42,5 +43,5 @@ header("content-type:image/gif");
 imagegif($image);
 imagedestroy($image);
 }
-verifyImage();
+verifyImage(2,5,30,5);
  ?>
